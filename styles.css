@@ -1,0 +1,42 @@
+/* Navbar (LSHTM-ish) */
+.navbar {
+  background-color: #2c3e50 !important;
+  border-color: #1a252f !important;
+}
+.navbar .navbar-brand, .navbar-nav > li > a {
+  color: #ecf0f1 !important;
+}
+.navbar-nav > li > a:hover {
+  color: #ffffff !important;
+}
+
+/* Full-bleed map container with floating panel */
+.outer {
+  position: fixed;
+  top: 60px; bottom: 0; left: 0; right: 0;
+}
+
+/* Controls panel: keep your styling, just make it wider & a touch taller */
+#controls.panel {
+  background: rgba(255,255,255,0.95);
+  padding: 10px 12px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+
+  /* NEW: 120% wider (was 300px), 105% taller */
+  width: 360px;
+  transform: scaleY(1.05);
+  transform-origin: top left;
+}
+
+/* Filters panel: begin right after wider controls, a bit taller */
+#filters.panel {
+  left: 380px !important;   /* controls width (360) + 20px gap */
+  right: 10px;
+  height: 170px;            /* was 140 */
+}
+
+/* Plot titles bold by default (keep) */
+h2, h3, .plot-title, .ggplot-title {
+  font-weight: 700;
+}

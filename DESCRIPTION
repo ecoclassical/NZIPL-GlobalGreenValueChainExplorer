@@ -1,0 +1,29 @@
+Package: NZIPLGlobalGreenValueChainExplorer
+Type: ShinyApp
+Title: NZIPL – Global Green Value-Chain Explorer
+Version: 0.1.0
+Authors@R: 
+    person("Oriol", "Vallès Codina", email = "oriolvallescodina@gmail.com", 
+           role = c("aut", "cre"))
+Description: Shiny app for visualizing green technology value chains.
+    Includes interactive world map, regional stacked plots, and 
+    a bilateral trade network (BACI 2002), based on HS codes from the 
+    green technology dictionary.
+Depends: R (>= 4.2)
+Imports:
+    shiny,
+    leaflet,
+    dplyr,
+    tidyr,
+    readr,
+    stringr,
+    DT,
+    rnaturalearth,
+    rnaturalearthdata,
+    janitor,
+    countrycode,
+    visNetwork,
+    sf,
+    ggplot2,
+    scales
+Encoding: UTF-8

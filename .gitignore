@@ -1,0 +1,16 @@
+# R session junk
+.Rhistory
+.RData
+.Rproj.user/
+
+# macOS / OS junk
+.DS_Store
+
+# Deployment metadata (don’t version control this)
+rsconnect/
+
+# Aux scripts (local use only)
+aux/
+
+# Large BACI files
+data/BACI*.RDS
