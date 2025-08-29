@@ -123,24 +123,22 @@ server <- function(input, output, session) {
               .groups = "drop")
   
   # Bilateral (2002 only) — restrict to green HS codes, valid ISO3, add regions
-  baci_raw <- readRDS("data/BACI_2002.RDS") |>
+  # Bilateral (2002 only)
+  baci2002 <- readRDS("data/BACI_2002.RDS") |>
     as_tibble() |>
     clean_names() |>
     mutate(
       hs_code  = sprintf("%06s", as.character(product_code)),
       exporter = toupper(exporter),
       importer = toupper(importer)
-    )
-  
-  baci2002 <- baci_raw |>
-    semi_join(dic_unique, by = "hs_code") |>
-    inner_join(dic_unique, by = "hs_code", relationship = "many-to-many") |>
-    filter(exporter %in% valid_iso3, importer %in% valid_iso3) |>
-    left_join(cty_uni |> select(country_iso3, region),
-              by = c("exporter" = "country_iso3")) |>
+    ) |>
+    # keep only green HS codes
+    inner_join(dic, by = "hs_code") |>
+    # re-attach product descriptions (instead of storing full text in the RDS)
+    left_join(hs_desc, by = "hs_code") |>
+    left_join(countries |> select(country_code, region), by = c("exporter" = "country_code")) |>
     rename(region_exporter = region) |>
-    left_join(cty_uni |> select(country_iso3, region),
-              by = c("importer" = "country_iso3")) |>
+    left_join(countries |> select(country_code, region), by = c("importer" = "country_code")) |>
     rename(region_importer = region)
   
   # Shared objects for modules

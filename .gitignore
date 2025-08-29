@@ -6,11 +6,11 @@
 # macOS / OS junk
 .DS_Store
 
-# Deployment metadata (don’t version control this)
+# Deployment metadata (don't version control this)
 rsconnect/
 
 # Aux scripts (local use only)
-aux/
+# aux/
 
-# Large BACI files
-data/BACI*.RDS
+# Large BACI files (not large any longer)
+# data/BACI*.RDS

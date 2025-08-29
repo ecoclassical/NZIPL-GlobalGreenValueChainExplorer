@@ -1,42 +1,47 @@
-/* Navbar (LSHTM-ish) */
+/* Navbar */
 .navbar {
   background-color: #2c3e50 !important;
   border-color: #1a252f !important;
 }
-.navbar .navbar-brand, .navbar-nav > li > a {
-  color: #ecf0f1 !important;
-}
-.navbar-nav > li > a:hover {
-  color: #ffffff !important;
-}
+.navbar .navbar-brand, .navbar-nav > li > a { color: #ecf0f1 !important; }
+.navbar-nav > li > a:hover { color: #ffffff !important; }
 
-/* Full-bleed map container with floating panel */
-.outer {
-  position: fixed;
-  top: 60px; bottom: 0; left: 0; right: 0;
-}
+/* Full-bleed map container with floating panels */
+.outer { position: fixed; top: 60px; bottom: 0; left: 0; right: 0; }
 
-/* Controls panel: keep your styling, just make it wider & a touch taller */
+/* Controls panel: wider + slightly taller */
 #controls.panel {
   background: rgba(255,255,255,0.95);
   padding: 10px 12px;
   border-radius: 10px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-
-  /* NEW: 120% wider (was 300px), 105% taller */
   width: 360px;
   transform: scaleY(1.05);
   transform-origin: top left;
 }
 
-/* Filters panel: begin right after wider controls, a bit taller */
+/* Filters panel: start after controls, add inner padding */
 #filters.panel {
   left: 380px !important;   /* controls width (360) + 20px gap */
   right: 10px;
-  height: 170px;            /* was 140 */
+  height: 170px;
+  padding: 12px 16px;       /* NEW: nicer left/right padding */
+  border-radius: 10px;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
 
-/* Plot titles bold by default (keep) */
-h2, h3, .plot-title, .ggplot-title {
-  font-weight: 700;
+/* Make control labels a bit smaller */
+#controls .control-label { font-size: 13px; font-weight: 600; }
+#controls h5 { font-size: 15px; margin-top: 10px; }
+
+/* Radio group: 3 columns horizontal */
+#controls .shiny-input-radiogroup { 
+  display: flex; flex-wrap: wrap; gap: 6px 8px; 
 }
+#controls .radio-inline { 
+  width: 32%; margin-right: 0; white-space: nowrap;
+}
+
+/* Plot titles bold by default */
+h2, h3, .plot-title, .ggplot-title { font-weight: 700; }
