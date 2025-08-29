@@ -21,6 +21,8 @@ shiny::runApp("NetZeroValueChainExplorer")
 
 ## Project Tree 
 
+```text
+
 NetZeroValueChainExplorer/
 ├── app.R
 ├── styles.css
@@ -37,7 +39,8 @@ NetZeroValueChainExplorer/
 │   └── country_codes_V202501.csv
 └── aux/
     └── check_data.R
-    
+```
+
 ## Data Notes
 
 - **Unilateral (Map/Regions)**: `green_trade.RDS` (2004–2023).
