@@ -62,7 +62,7 @@ mod_map_server <- function(id, shared) {
       updateSelectizeInput(session, "f_stage", choices = shared$stage_levels)
       updateSelectizeInput(session, "f_region",choices = shared$region_levels)
       
-      yrs <- sort(unique(shared$sd$year))
+      yrs <- sort(unique(shared$s$year))
       updateSliderInput(session, "year", min = min(yrs), max = max(yrs),
                         value = min(yrs), step = 1)
     })
