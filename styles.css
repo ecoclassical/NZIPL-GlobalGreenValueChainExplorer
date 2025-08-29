@@ -22,9 +22,9 @@
 
 /* Filters panel: start after controls, add inner padding */
 #filters.panel {
-  left: 380px !important;   /* controls width (360) + 20px gap */
+  left: 350px !important;   /* controls width (360) + 20px gap */
   right: 10px;
-  height: 170px;
+  height: 200px;
   padding: 12px 16px;       /* NEW: nicer left/right padding */
   border-radius: 10px;
   background: rgba(255,255,255,0.95);
@@ -37,10 +37,26 @@
 
 /* Radio group: 3 columns horizontal */
 #controls .shiny-input-radiogroup { 
-  display: flex; flex-wrap: wrap; gap: 6px 8px; 
+  display: flex; 
+  flex-wrap: nowrap; 
+  gap: 6px 8px; 
 }
 #controls .radio-inline { 
   width: 32%; margin-right: 0; white-space: nowrap;
+}
+
+controls .radio-inline {
+  width: auto;             /* let them size naturally */
+  margin-right: 0;
+  white-space: nowrap;     /* keep labels on one line */
+  display: inline-flex;
+  align-items: center;
+}
+
+/* (optional) slightly tighter labels to win horizontal space */
+#controls .radio-inline input[type="radio"] {
+  margin-top: 0;
+  margin-right: 6px;
 }
 
 /* Plot titles bold by default */
